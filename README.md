@@ -1,4 +1,15 @@
-<<<<<<< HEAD
+# App name : Unique-coloured-component-app
+This React app will produce an image in which each colour occurs exactly once -- with no repetition and no used colours. 
+
+# Approch
+Components are broken into Child-Parent concept,  each child component into 32 steps -- 8, 16,24, .. 256 -- which means it have 32,768 discrete colours. Parent component is of size 256px x 128px
+
+Box is the child component and ColoredBox is the parent component.
+
+# Test Cases
+App.test.js and Box.test.js are having test cases for the app
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,15 +80,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# App name : Unique-coloured-component-app
-This React app will produce an image in which each colour occurs exactly once -- with no repetition and no used colours. 
 
-# Approch
-Components are broken into Child-Parent concept,  each child component into 32 steps -- 8, 16,24, .. 256 -- which means it have 32,768 discrete colours. Parent component is of size 256px x 128px
-
-Box is the child component and ColoredBox is the parent component.
-
-# Test Cases
-App.test.js and Box.test.js are having test cases for the app
->>>>>>> 7f1d6a1c8195f689b4413a86da910b2a1776f716
