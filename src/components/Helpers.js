@@ -1,19 +1,14 @@
-// Method return a random number from 0 to 255 
-const rgbValue = () => {
-    return Math.floor(Math.random() * 256)
-}
-
 // Method generates an array of rgb colors 
-const generateColors = (num) => {
-    let colors = []
-
-    for (let i = 0; i < num; i++) {
-        const red = rgbValue()
-        const blue = rgbValue()
-        const green = rgbValue()
-        colors.push(`rgb(${red},${blue},${green})`)
+const generateColors = () => {
+    let colors = [];
+    for (let r = 0; r < 255; r += 8) {
+        for (let b = 0; b < 255; b += 8) {
+            for (let g = 0; g < 255; g += 8) {
+                colors.push(`rgb(${r},${b},${g})`);
+            }
+        }
     }
     return colors
 }
 
-export { rgbValue, generateColors }
+export { generateColors }

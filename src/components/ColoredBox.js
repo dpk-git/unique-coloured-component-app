@@ -1,61 +1,22 @@
-import React,{ Component } from 'react'
+import React from 'react';
 import './ColoredBox.css'
 import Box from './Box'
-import { rgbValue, generateColors } from './Helpers'
-  
-class ColoredBox extends Component{ 
-  
-  // Number of color boxes want shows by default 
-  static defaultProps = { 
-    num : 1 
-  } 
-  constructor(props){ 
-    super(props) 
-    this.state = { 
-      
-      // Color state contains array of rgb color values 
-      colors : generateColors(this.props.num) 
-    } 
-    this.changeColor = this.changeColor.bind(this) 
-  } 
-  
-  changeColor(c){ 
-    
-    // Create new random rgb color 
-    let newColor 
-    do{ 
-      newColor = `rgb( 
-        ${rgbValue()}, 
-        ${rgbValue()}, 
-        ${rgbValue()} 
-      )` 
-        
-    // If new rgb color is equal to previous  
-    // color of the box then again create new  
-    // rgb color value 
-    }while(newColor === c) 
-  
-    // Change colors array state by inserting  
-    // new color value in place of previous color 
-    this.setState(st => ({ 
-      colors : st.colors.map(color => { 
-        if(color !== c) return color 
-        return newColor 
-      }) 
-    })) 
-  } 
-  
-  render(){  
-    return( 
-      <div className='ColoredBox'> 
-        {this.state.colors.map(color => ( 
-          
+import { generateColors } from './Helpers'
+
+const ColoredBox = () => {
+  const uniqueColors = generateColors();
+
+  return (
+    <div className='ColoredBox' style={{ width: '256px', height: '128px' }}>
+      {
+        uniqueColors.map((color, index) => (
           // For each color make a box component 
-          <Box color={color} changeColor={this.changeColor}/> 
-        ))} 
-      </div> 
-    ) 
-  } 
-} 
-  
+          <Box key={index} color={color} />
+        ))
+      }
+    </div>
+  )
+
+}
+
 export default ColoredBox
