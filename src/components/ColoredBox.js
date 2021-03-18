@@ -1,22 +1,14 @@
 import React from 'react';
-import './ColoredBox.css'
-import Box from './Box'
-import { generateColors } from './Helpers'
+import './ColoredBox.css';
+import { generateColors } from './Helpers';
+import DrawImage  from './DrawImage';
 
 const ColoredBox = () => {
-  const uniqueColors = generateColors();
-
   return (
-    <div className='ColoredBox' style={{ width: '256px', height: '128px' }}>
-      {
-        uniqueColors.map((color, index) => (
-          // For each color make a box component 
-          <Box key={index} color={color} />
-        ))
-      }
+    <div className='ColoredBox' >
+     { <DrawImage></DrawImage> }
     </div>
   )
-
 }
 
 export default ColoredBox
