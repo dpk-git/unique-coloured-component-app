@@ -5,7 +5,7 @@ import DrawImage  from './DrawImage';
 
 const ColoredBox = () => {
   return (
-    <div className='ColoredBox' >
+    <div className='ColoredBox' style={{textAlign:'left'}} >
      { <DrawImage></DrawImage> }
     </div>
   )

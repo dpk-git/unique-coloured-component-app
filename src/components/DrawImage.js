@@ -10,8 +10,8 @@ const DrawImage = props => {
 
         //init color counter
         var cntr=0;
-        for (let w = 0; w < 256; w++) {  //
-            for (let h = 0; h < 128; h++) {
+        for (let h = 0; h < 128; h++) {  //
+            for (let w = 0; w < 256; w++) {
                 context.fillStyle = uniqueColors[cntr];
                 context.fillRect(w, h, 1, 1);
                 cntr++;
