@@ -15,7 +15,7 @@ describe("Helper", ()=>{
         const colors = idx.generateColors();
         const count=1;
         colors.forEach(color=>{
-            expect(colors.filter(c=>c==color).length).toBe(1);
+            expect(colors.filter(c=>c===color).length).toBe(count);
         });
     });
 
